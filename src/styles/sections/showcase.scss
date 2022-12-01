@@ -1,0 +1,112 @@
+.showcase {
+	[data-theme="green"] & {
+		--theme-color: #{$color-harp};
+	}
+	[data-theme="red"] & {
+		--theme-color: #{$color-cinderella};
+	}
+	[data-theme="black"] & {
+		--theme-color: #{$color-harp};
+	}
+
+	position: relative;
+	margin-top: 6rem;
+
+	height: 72rem;
+	overflow: hidden;
+
+	.wrapper {
+		padding-top: 7.3rem;
+		text-align: center;
+	}
+
+	&__background {
+		content: "";
+		position: absolute;
+		z-index: -1;
+
+		width: 100%;
+		max-width: $container-area;
+		height: 65.7rem;
+		background-color: var(--theme-color);
+
+		left: 0;
+		right: 0;
+
+		top: 0;
+
+		margin: 0 auto;
+
+		border-radius: 4.1rem;
+	}
+
+	&__subtitle {
+		margin-bottom: 2.3rem;
+	}
+
+	&__title {
+		margin-bottom: 3.3rem;
+	}
+
+	&__infos {
+		@include flex(row, center, center);
+
+		&__item {
+			display: list-item;
+			text-align: left;
+
+			font-family: $font-tertiary;
+			font-weight: 600;
+			font-size: 1.6133rem;
+
+			list-style: outside url("./assets/showcase_icon-check.svg");
+
+			&:not(:last-child) {
+				margin-right: 4.8rem;
+			}
+		}
+	}
+
+	&__content {
+		&__gif {
+			position: absolute;
+			left: 0;
+			top: -14.2rem;
+
+			width: 1440px;
+			height: auto;
+			pointer-events: none;
+
+			img {
+				object-fit: cover;
+				max-width: 100vw;
+			}
+		}
+	}
+
+	@include media("<=phone") {
+		&__infos {
+			flex-direction: column;
+			align-items: flex-start;
+			margin: 0 auto;
+			width: max-content;
+			gap: 2rem;
+
+			&__item {
+				margin: 0;
+			}
+		}
+
+		&__content {
+			&__gif {
+				top: 5rem;
+				width: 100vw;
+
+				img {
+					object-fit: cover;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}

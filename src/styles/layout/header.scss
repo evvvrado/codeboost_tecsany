@@ -1,0 +1,95 @@
+header {
+	z-index: z("header");
+	background-color: $color-white;
+
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: 0.3s ease;
+
+	opacity: 0;
+	visibility: hidden;
+
+	.wrapper {
+		@include flex(row, center, space-between);
+		@include padding-y(1.6rem);
+	}
+
+	.header {
+		&__navigation {
+			@include flex(row, center, flex-start, 6.3rem);
+
+			&__links {
+				&__link {
+					display: inline;
+					text-transform: uppercase;
+					font-size: 1.2rem;
+					font-weight: 500;
+					font-family: $font-tertiary;
+
+					&:not(:last-child) {
+						margin-right: 3.2rem;
+					}
+
+					transition: 0.32s ease;
+
+					@extend %splited-span-after-animation;
+				}
+
+				&:hover {
+					& > .header__navigation__links__link:not(:hover) {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+
+		&__actions {
+			@include flex(row, center, center, 2.5rem);
+			height: 100%;
+
+			&__search,
+			&__login {
+				transition: 0.32s ease;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+			&__login {
+				@include flex(row, center, flex-start, 0.7rem);
+
+				&__text {
+					font-size: 1.6rem;
+					font-weight: 500;
+					font-family: $font-secundary;
+				}
+			}
+		}
+	}
+
+	@include media("<=md_phone") {
+		.header {
+			&__navigation {
+				justify-content: space-between;
+
+				&__links {
+					&__link {
+						display: block;
+						margin: 0 2rem;
+					}
+				}
+			}
+
+			&__actions {
+				display: none;
+			}
+		}
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}

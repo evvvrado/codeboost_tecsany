@@ -1,0 +1,35 @@
+// ========= PADRÃO USADO EM TEXTOS ========= //
+
+html h1 {
+	font-family: $font-primary;
+	font-weight: 400;
+	font-size: 7.2rem;
+	line-height: 110%;
+}
+html h2 {
+	font-family: $font-primary;
+	font-weight: 400;
+	font-size: 6.2rem;
+	line-height: 110%;
+}
+html h3 {
+	font-family: $font-tertiary;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.8rem;
+	line-height: 150%;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+html h4 {
+}
+html p {
+}
+
+%description-p {
+	font-family: $font-secundary;
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 150%;
+	color: $color-gray;
+}
